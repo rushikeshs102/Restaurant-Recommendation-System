@@ -1,132 +1,121 @@
-# 🛡️ AI-Enhanced Intrusion Detection System (IDS)  
-### *Cybersecurity Threat Detection Using Machine Learning*
-
+# **Restaurant Recommendation System**
 ---
 
-## 📌 Project Description
+## **Project Description**
+- This project focuses on developing a smart restaurant recommendation system that delivers personalized suggestions based on user preferences, budget, dietary restrictions, and current location.
+- A hybrid recommendation model combining **collaborative filtering** and **content-based filtering** techniques is implemented to provide accurate and relevant results.
+- The system adapts dynamically based on user inputs and geolocation data, enhancing the user's decision-making process when exploring dining options.
 
-In an increasingly interconnected digital landscape, the security of organizational networks and sensitive data is of paramount importance. This project focuses on the development of an **AI-Enhanced Intrusion Detection System** that leverages machine learning to detect, classify, and respond to network intrusions with high accuracy.
+## **Screenshots**
 
-By combining advanced **Random Forest Classification** with cybersecurity domain knowledge, the system empowers organizations to proactively combat evolving threats.
-
----
-
-## 🖼️ **Demo Screenshots**
-
-### 🔹 Home Page  
-
+### Home Page:
 <p align="center">
-  <img src="https://drive.google.com/uc?export=view&id=1dXUPq0OiRTV-h09iJhoJWNhBYuqw6VjY" width="800" alt="Home Page Screenshot">
+<img src="https://drive.google.com/uc?export=view&id=1A7LQAsf-VSwH9aaV3Hoe6HNFSkcW75xA" width="800" alt="Image 2">
 </p>
 
-### 🔹 Classification Result  
+### Input Page:
 <p align="center">
-  <img src="https://drive.google.com/uc?export=view&id=1fgDNk36_GoGV3AdLgkA0_0z7ZEo7gtcz" width="800" alt="Classification Results Screenshot">
+ <img src="https://drive.google.com/uc?export=view&id=1UdSUpmxsSX8U4m-FUajcVXhyxH7Hbbcp" width="800" alt="Image 1">
 </p>
 
+### Recommendation Output:
+<p align="center">
+ <img src="https://drive.google.com/uc?export=view&id=1HuFP_R1lDc6fNU0wAM5POq5HwfuipjEI" width="800" alt="Image 3">
+</p>
 
----
+## **Installation and Setup**
 
-## 🛠️ **Technologies Used**
-
-- **Python 3.10+**
-- **Flask (Backend Web Framework)**
-- **HTML / CSS (Frontend UI)**
-- **Pandas / NumPy (Data Manipulation)**
-- **Scikit-learn (Machine Learning)**
-- **Imbalanced-learn (SMOTE for Class Balancing)**
-- **Joblib (Model Serialization)**
-
----
-
-## 🧠 **Model Details**
-
-The Intrusion Detection System uses a **Random Forest Classifier** trained on a preprocessed and balanced network intrusion dataset. The model is enhanced with **SMOTE** to handle class imbalance.
-
-The final model is saved as:
-
+### Using Conda (Recommended)
 ```bash
-random_forest_model_4_features.joblib
+# Create a new conda environment
+conda create -n restaurant_recommender python=3.10
+
+# Activate the environment
+conda activate restaurant_recommender
+
+# Clone the repository
+git clone https://github.com/Rohitmh09/Restaurant-Recommendation-System.git
+cd Restaurant-Recommendation-System/Flask
+
+# Install dependencies
+pip install -r requirements.txt
 ```
-
----
-
-## 🗂️ **Project Directory Structure**
-
-```
-CYBER-AI-ENHANCED-INTRUSION-DETECTION/
-├── CYBER_PROJECT/
-│ ├── templates/
-│ │ └── index.html                             # Web interface template
-│ └── app.py                                   # Flask application entry point
-├── random_forest_model_4_features.joblib      # Trained ML model
-├── web_attacks_balanced.csv                   # Preprocessed dataset
-├── requirment.txt                             # Python dependencies
-├── Untitled.ipynb                             # Data analysis / experimentation notebook
-└── README.md                                  # Project documentation
-```
-
----
-
-## ⚙️ **Installation & Setup**
-
-### 📦 Using Conda (Recommended)
-
+### Using Python venv
 ```bash
-conda create -n cyber_ids python=3.10
-conda activate cyber_ids
-git clone https://github.com/your-username/cyber-ai-ids.git
-cd cyber-ai-ids
-pip install -r requirment.txt
+# Create a virtual environment
+python -m venv venv
+
+# Activate the environment
+# On Windows:
+venv\Scripts\activate
+# On macOS/Linux:
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
 ```
 
-### 🐍 Using Python venv
-
+### Running the Application
 ```bash
-python -m venv ids_env
-
-# Windows:
-ids_env\Scripts\activate
-
-# macOS/Linux:
-source ids_env/bin/activate
-
-pip install -r requirment.txt
-```
-
-> **Note:** Make sure to install **Flask** and **scikit-learn** separately if not included in the requirements.
-
----
-
-## 🚀 **Running the Application**
-
-```bash
+# Navigate to the Flask directory
 cd Flask
-python app.py
+
+# Run the Flask web application
+python app1.py
+
+# Visit http://localhost:5000 to access the app
+```
+### Project Structure:
+
+```bash
+Restaurant-Recommendation-System/
+├── Documentation...
+├── Flask/
+│   ├── __pycache__/                # Compiled Python cache files
+│   ├── static/                     # Static assets (Images)
+│   ├── templates/                  # HTML templates for the frontend
+│   ├── app1.py                     # Flask application entry point
+│   ├── Final_Development_Phase.ipynb  # Flask dev notebook
+│   ├── requirements.txt            # Python dependencies
+│   └── restaurant1.csv             # Restaurant dataset
+├── Model/
+    └── Final_Development_Phase.ipynb  # Model training and evaluation notebook
 ```
 
-Open your browser and go to:  
-👉 `http://localhost:5000`
+## **Technologies Used**
+- **Python 3.10** – Core programming language
+- **Flask** – Lightweight web framework to build the backend API
+- **Scikit-learn** – For building and evaluating machine learning models
+- **Surprise** – Specialized library for collaborative filtering (e.g., SVD)
+- **Pandas / NumPy** – For data manipulation and preprocessing
+- **NLTK** – For natural language processing and cleaning review text
+- **Matplotlib / Seaborn / Plotly** – For data visualization and EDA
+- **HTML / CSS / JavaScript** – For designing the frontend interface
 
 ---
 
-## 📁 **Dataset Overview**
+## **Model Architecture**
+This project uses a **Hybrid Recommendation Model** combining the strengths of:
 
-The web_attacks_balanced.csv dataset includes labeled network traffic data categorized into different types of intrusions and normal behavior.
+### 🔹 Content-Based Filtering
+- Analyzes restaurant attributes like cuisine type, average cost, rating, and delivery option.
+- Matches these with user-stated preferences to recommend relevant restaurants.
 
----
+### 🔹 Collaborative Filtering (SVD)
+- Uses historical user rating data to find similar users and suggest restaurants based on collective behavior.
+- Implemented using the `Surprise` library's Singular Value Decomposition (SVD) algorithm.
 
-## 🔮 **Future Enhancements**
+### 🔹 Hybrid Approach
+- Merges both filtering strategies to solve the cold-start and sparsity problems.
+- Balances personalization with discovery of new or less popular options.
 
-- Add real-time network traffic capture and classification
-- Enable email/SMS alerts for high-risk threats
-- Integrate logs into a security dashboard
-- Add more ML models like XGBoost and Neural Networks
+## **Dataset**
+The dataset is sourced from **Kaggle** and titled:
 
----
+> [Zomato Bangalore Restaurants Dataset by Himanshu Poddar](https://www.kaggle.com/datasets/himanshupoddar/zomato-bangalore-restaurants)
 
-## ✅ **Conclusion**
+## **Conclusion**
+This project successfully demonstrates how **machine learning and recommendation systems** can simplify dining decisions by tailoring restaurant suggestions to user preferences and behavior. It offers a powerful and adaptive solution for users in both familiar and unfamiliar areas. The hybrid model ensures balance between personalized results and discovery of new options. This project lays the foundation for more advanced, real-time, and location-aware food recommendation engines.
 
-This project showcases how artificial intelligence and machine learning can be effectively applied to cybersecurity for real-time intrusion detection and network threat mitigation. With high accuracy and automation, this AI-powered IDS reduces response time and enhances the overall security posture of an organization.
 
 
